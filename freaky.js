@@ -19,19 +19,23 @@ freakifybutton.addEventListener("click", function()
     let txt = input.value;
 
     //xss prevention
-    txt = escapeOutput(txt);
+    splittext = txt.split(/([ .,?"])/g);
+
+    console.log(splittext);
     
     for(let i = 0; i < adjectives.length; i++)
     {
-        txt = txt.replace(" " + adjectives[i], " 𝓯𝓻𝓮𝓪𝓴𝔂 ");
-        txt = txt.replace(" " + adjectives[i] + ".", " 𝓯𝓻𝓮𝓪𝓴𝔂.");
-        txt = txt.replace(" " + adjectives[i] + ",", " 𝓯𝓻𝓮𝓪𝓴𝔂.");
-        txt = txt.replace(" " + adjectives[i] + "?", " 𝓯𝓻𝓮𝓪𝓴𝔂.");
-        txt = txt.replace(" " + adjectives[i] + '"', ' 𝓯𝓻𝓮𝓪𝓴𝔂"');
-        txt = txt.replace('"' + adjectives[i] + " ", '"𝓯𝓻𝓮𝓪𝓴𝔂 ');
-        txt = txt.replace('"' + adjectives[i] + '"', '"𝓯𝓻𝓮𝓪𝓴𝔂"');
+        for (let j = 0; j < splittext.length; j++)
+        {
+            if(splittext[j] == adjectives[i])
+            {
+                splittext[j] = "𝓯𝓻𝓮𝓪𝓴𝔂";
+            }
+        }
     }
 
+    txt = splittext.join("");
+    txt = escapeOutput(txt);
+
     output.innerHTML = txt;
-    console.log(adjectives[15]);
 });
