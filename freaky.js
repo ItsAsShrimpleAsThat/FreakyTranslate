@@ -23,7 +23,7 @@ freakifybutton.addEventListener("click", function()
     
     for(let i = 0; i < adjectives.length; i++)
     {
-        txt = txt.replace(" " + adjectives[i] + " ", " 𝓯𝓻𝓮𝓪𝓴𝔂 ");
+        txt = txt.replace(" " + adjectives[i], " 𝓯𝓻𝓮𝓪𝓴𝔂 ");
         txt = txt.replace(" " + adjectives[i] + ".", " 𝓯𝓻𝓮𝓪𝓴𝔂.");
         txt = txt.replace(" " + adjectives[i] + ",", " 𝓯𝓻𝓮𝓪𝓴𝔂.");
         txt = txt.replace(" " + adjectives[i] + "?", " 𝓯𝓻𝓮𝓪𝓴𝔂.");
