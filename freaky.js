@@ -27,7 +27,7 @@ freakifybutton.addEventListener("click", function()
     {
         for (let j = 0; j < splittext.length; j++)
         {
-            if(splittext[j] == adjectives[i])
+            if(splittext[j].toLowerCase() == adjectives[i])
             {
                 splittext[j] = "𝓯𝓻𝓮𝓪𝓴𝔂";
             }
